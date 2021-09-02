@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  height: 100%;
+  display: grid;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+  height: 100vh;
+}

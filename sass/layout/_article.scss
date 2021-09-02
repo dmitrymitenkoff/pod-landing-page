@@ -1,1 +1,63 @@
+.article {
+  margin: 0 2.4rem;
 
+  // TABLET
+  @include responsive(tablet) {
+    background-color: $color-navy-blue-dark;
+    margin: 0;
+    padding-top: 9.3rem;
+    grid-area: article;
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    margin-left: 16.5rem;
+    padding-top: 8.8rem;
+  }
+
+  h1 {
+    margin-bottom: 1.6rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      font-size: 4.8rem;
+      line-height: 5.6rem;
+      text-align: left;
+      margin-bottom: 3.1rem;
+      padding-left: 3.9rem;
+    }
+
+    // DESKTOP
+    @include responsive(desktop) {
+      font-size: 5.2rem;
+      line-height: 6.2rem;
+      margin-bottom: 2.4rem;
+      padding-left: 0;
+    }
+  }
+
+  .card__heading--emphasis {
+    display: inline-block;
+    color: $color-medium-aquamarine;
+  }
+
+  .card__description {
+    margin-bottom: 3.3rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      text-align: left;
+      margin-bottom: 4rem;
+      padding-left: 3.9rem;
+      padding-right: 19rem;
+    }
+
+    // DESKTOP
+    @include responsive(desktop) {
+      padding-left: 0;
+      padding-right: 27.8rem;
+    }
+  }
+}

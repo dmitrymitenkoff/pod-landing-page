@@ -1,0 +1,103 @@
+.form {
+  margin: 0 2.4rem 9.4rem;
+
+  // TABLET
+  @include responsive(tablet) {
+    background-color: $color-navy-blue-dark;
+    height: 5.6rem;
+    margin: 0;
+    padding-left: 3.9rem;
+    padding-bottom: 6.4rem;
+    position: relative;
+    grid-area: form;
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    padding-left: 16.5rem;
+  }
+
+  input,
+  button {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    border-radius: 2.8rem;
+  }
+
+  input {
+    background-color: $color-violet-blue;
+    color: $color-white;
+    outline: none;
+    border-color: transparent;
+    margin-bottom: 1.6rem;
+    padding: 0.9rem 0 0.9rem 3.2rem;
+
+    // TABLET & DESKTOP
+    @include responsive(tablet) {
+      width: 42.8rem;
+      padding: 1.4rem 0 1.4rem 3.2rem;
+      position: absolute;
+    }
+  }
+
+  // Input placeholder styling for different browsers:
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $color-white;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color-white;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: $color-white;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: $color-white;
+  }
+
+  button {
+    background-color: $color-medium-aquamarine;
+    outline: none;
+    font-family: 'Chivo', sans-serif;
+    color: $color-navy-blue-dark;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.9rem 0 0.9rem 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+
+    // TABLET
+    @include responsive(tablet) {
+      position: absolute;
+      width: 16.2rem;
+      height: 4.6rem;
+      left: 44.5%;
+      top: 0.5rem;
+    }
+
+    // DESKTOP
+    @include responsive(desktop) {
+      left: 47.2%;
+    }
+  }
+
+  button:hover,
+  button:focus {
+    background: $color-hover;
+  }
+
+  button:focus {
+    outline: 1px solid $color-white;
+    outline-offset: -4px;
+  }
+
+  button:active {
+    transform: scale(0.99);
+  }
+}

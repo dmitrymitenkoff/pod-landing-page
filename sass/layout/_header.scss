@@ -1,1 +1,27 @@
+.header {
+  margin: 6.2rem 0 5.7rem;
 
+  &__logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+  // TABLET
+  @include responsive(tablet) {
+    background-color: $color-navy-blue-dark;
+    margin: 0;
+    grid-area: header;
+
+    &__logo {
+      margin: 5rem 10.315rem 15.2rem 3.9rem;
+    }
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    &__logo {
+      margin-top: 10.2rem;
+      margin-left: 16.5rem;
+    }
+  }
+}

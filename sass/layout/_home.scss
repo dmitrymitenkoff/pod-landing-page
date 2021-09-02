@@ -1,0 +1,28 @@
+.site {
+  // MOBILE
+  width: 37.5rem;
+  margin: auto;
+  background-image: linear-gradient(
+      rgba($color-navy-blue-dark, 0.9),
+      rgba($color-navy-blue-dark, 0.9)
+    ),
+    url(/assets/mobile/image-host.jpg);
+
+  // TABLET
+  @include responsive(tablet) {
+    width: 76.8rem;
+    background-image: url(/assets/tablet/image-host.jpg);
+    background-color: $color-navy-blue-dark;
+    background-size: 77%;
+    background-repeat: no-repeat;
+    background-position: 20rem -4rem;
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    width: 144.4rem;
+    background-image: url(/assets/desktop/image-host.jpg);
+    background-size: 70%;
+    background-position: top 13rem right 0;
+  }
+}

@@ -1,0 +1,19 @@
+.site {
+  // TABLET
+  @include responsive(tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 9.4rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'header . .'
+      'article article .'
+      'form form .'
+      'podcasts-group podcasts-group .'
+      'footer footer footer';
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    grid-template-columns: 1fr 1fr 1.2fr;
+  }
+}
