@@ -21,7 +21,11 @@ function isValidEmail(email) {
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  if (!isValidEmail(emailInput.value)) {
+  if (emailInput.value === '') {
+    small.innerText = 'Oops! Please add your email!';
+    showError();
+  } else if (!isValidEmail(emailInput.value)) {
+    small.innerText = 'Oops! Please check your email!';
     showError();
   } else {
     showSuccess();

@@ -1,11 +1,9 @@
-# Frontend Mentor - Pod request access landing page solution
-
-This is a solution to the [Pod request access landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+# Pod request access landing page
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The project](#the-project)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -16,11 +14,9 @@ This is a solution to the [Pod request access landing page challenge on Frontend
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
-### The challenge
+### The project
 
 Users should be able to:
 
@@ -35,17 +31,7 @@ Users should be able to:
 ![](./screenshots/mobile.png)
 ![](./screenshots/mobile-invalid-email.png)
 ![](./screenshots/tablet.png)
-![](./screenshots/tablet-invalid-email.png)
 ![](./screenshots/dekstop.png)
-![](./screenshots/desktop-invalid-email.png)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
@@ -57,41 +43,82 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JavaScript
+- [SASS](https://sass-lang.com) - Sass - CSS extension language
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+1. It is recommended to use an explicit label instead of an implicit label when designing forms. This is because implicit labels are not handled correctly by assistive technologies, even if the "for" and "id" attributes are used. If the label is not required by the design, CSS allows us to hide the label in an accessible way. Setting display: none or visibility: hiddent is not considered accessible. To visually hide the label, I've opted to use the following code:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<label class="visually-hidden" for="email">Email</label>
+<input type="text" name="email" id="email" placeholder="Email address" />
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.visually-hidden {
+  border-width: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
+2. Using Sass mixin functionality allowed me to apply media breakpoints directly to certain elements rather than write all media queries in one place. Eg, I set two breakpoints (for tablet and desktop) like so:
+
+```scss
+@mixin responsive($breakpoint) {
+  // TABLET
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  // DESKTOP
+  @if $breakpoint == desktop {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+I then applied these directly in my scss partials:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```scss
+@include responsive(desktop) {
+  padding-left: 16.5rem;
+}
+```
+
+3. In CSS, it's possible to style placeholder text, but different prefixes are applied based on the browser:
+
+```css
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $color-white;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $color-white;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $color-white;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $color-white;
+}
+```
 
 ### Continued development
 
