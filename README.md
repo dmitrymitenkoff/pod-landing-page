@@ -33,6 +33,11 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshots/mobile.png)
+![](./screenshots/mobile-invalid-email.png)
+![](./screenshots/tablet.png)
+![](./screenshots/tablet-invalid-email.png)
+![](./screenshots/dekstop.png)
+![](./screenshots/desktop-invalid-email.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
