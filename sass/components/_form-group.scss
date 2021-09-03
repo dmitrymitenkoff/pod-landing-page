@@ -1,5 +1,17 @@
 .form {
   margin: 0 2.4rem 9.4rem;
+  position: relative;
+
+  .visually-hidden {
+    border-width: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
 
   // TABLET
   @include responsive(tablet) {
@@ -30,7 +42,7 @@
     color: $color-white;
     outline: none;
     border-color: transparent;
-    margin-bottom: 1.6rem;
+    margin-bottom: 3rem;
     padding: 0.9rem 0 0.9rem 3.2rem;
 
     // TABLET & DESKTOP
@@ -100,4 +112,36 @@
   button:active {
     transform: scale(0.99);
   }
+}
+
+small {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4rem;
+  color: $error;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+
+  @include responsive(tablet) {
+    top: 100%;
+    left: 11%;
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    left: 22%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+input.error {
+  border: 1px solid $error;
+}
+
+input.success {
+  border: 1px solid $color-medium-aquamarine;
 }
